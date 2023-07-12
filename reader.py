@@ -3,11 +3,12 @@ import numpy as np
 
 # Load the image using OpenCV
 # heatmap_small.png is a 340x215
-image = cv2.imread('./heatmap_small.png')
+inei = "Inei_Lima_alumbrado_small.png"
+image = cv2.imread('./Inei_Lima_alumbrado_small.png')
 
 # Get the dimensions of the image
 height, width, _ = image.shape
-print("height:", height, "width:", width)
+#print("height:", height, "width:", width)
 # Create a 2D array to store the color values
 #color_array = np.empty((height, width, 3))
 
@@ -21,10 +22,6 @@ for y in range(height):
         b, g, r = image[y, x]
         color = (int(b) + int(g) + int(r))/3
         alturaColor = 255 - color
-        # print type of b,g,r
-        #print(y, x, val)
-        # print (x, y, z) for opengl
-        #print(x/4, alturaColor/4, y/4)
         mirow.append((x/4, alturaColor/8, y/4))
     mimatrix.append(mirow)
 
